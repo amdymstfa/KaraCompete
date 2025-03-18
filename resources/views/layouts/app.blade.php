@@ -15,6 +15,8 @@
             @yield('content')
             @yield('details')
         </main>
-        <footer></footer>
+        <footer class="bg-gray-800 text-white py-8">
+            @include('components.footer')
+        </footer>
     </body>
 </html>
