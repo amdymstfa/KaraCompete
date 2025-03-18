@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         @vite(['resources/css/app.css', 'resources/js/app.js'])
         <title>@yield('title')</title>
-        
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     </head>
     <body>
         <header>
@@ -13,6 +13,7 @@
         </header>
         <main>
             @yield('content')
+            @yield('details')
         </main>
         <footer></footer>
     </body>

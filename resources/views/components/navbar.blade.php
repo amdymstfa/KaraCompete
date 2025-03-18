@@ -1,17 +1,17 @@
 <nav class="p-0 m-0" x-data="{ isOpen: false }">
-    <div class="flex justify-between items-center p-2 bg-white shadow-sm left-0 right-0 sticky font-inria text-2xl">
+    <div class="flex justify-between items-center p-2 bg-white shadow-sm left-0 right-0 sticky text-2xl">
         <!-- Logo -->
         <span class="font-bold"><a href="#">KaraCompete</a></span>
         
         <!-- Menu on desktop -->
         <ul class="hidden md:flex justify-between space-x-8">
-            <a href=""><li class="hover:border-1 hover:scale-105 duration-500 hover:rounded-sm hover:border-button hover:text-button">Tournament</li></a>
-            <a href=""><li class="hover:border-1 hover:scale-105 duration-500 hover:rounded-sm hover:border-button hover:text-button">Calendar</li></a>
-            <a href=""><li class="hover:border-1 hover:scale-105 duration-500 hover:rounded-sm hover:border-button hover:text-button">Results</li></a>
+            <a href=""><li class="hover:border-1 hover:scale-105 duration-500 hover:rounded-sm hover:border-button hover:text-primary ">Tournament</li></a>
+            <a href=""><li class="hover:border-1 hover:scale-105 duration-500 hover:rounded-sm hover:border-button hover:text-primary">Calendar</li></a>
+            <a href=""><li class="hover:border-1 hover:scale-105 duration-500 hover:rounded-sm hover:border-button hover:text-primary">Results</li></a>
         </ul>
         
         <!-- Login button -->
-        <button class="hidden md:block text-button font-bold rounded-sm border-2 border-button px-4 py-1 hover:bg-button hover:text-white transition-colors">
+        <button class="hidden md:block text-primary font-bold rounded-sm border-2 border-button px-4 py-1 hover:bg-button hover:text-white transition-colors">
             Login
         </button>
         
@@ -32,10 +32,10 @@
     <!-- Mobile Menu -->
     <div x-show="isOpen" class="md:hidden bg-white shadow-md">
         <ul class="flex flex-col items-center py-4 space-y-4">
-            <a href="" @click="isOpen = false"><li class="hover:scale-105 duration-500 hover:rounded-sm hover:text-button">Tournament</li></a>
-            <a href="" @click="isOpen = false"><li class="hover:scale-105 duration-500 hover:rounded-sm hover:text-button">Calendar</li></a>
-            <a href="" @click="isOpen = false"><li class="hover:scale-105 duration-500 hover:rounded-sm hover:text-button">Results</li></a>
-            <button class="text-button font-bold rounded-sm border-2 border-button px-4 py-1 w-32 hover:bg-button hover:text-white transition-colors">
+            <a href="" @click="isOpen = false"><li class="hover:scale-105 duration-500 hover:rounded-sm hover:text-primary">Tournament</li></a>
+            <a href="" @click="isOpen = false"><li class="hover:scale-105 duration-500 hover:rounded-sm hover:text-primary">Calendar</li></a>
+            <a href="" @click="isOpen = false"><li class="hover:scale-105 duration-500 hover:rounded-sm hover:text-primary">Results</li></a>
+            <button class="text-primary font-bold rounded-sm border-2 border-button px-4 py-1 w-32 hover:bg-button hover:text-white transition-colors">
                 Login
             </button>
         </ul>
