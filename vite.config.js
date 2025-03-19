@@ -10,4 +10,12 @@ export default defineConfig({
         }),
         tailwindcss(),
     ],
+    build: {
+        rollupOptions: {
+            input: {
+                main: 'resources/js/app.js',
+                assets: 'resources/datas/'
+            }
+        }
+    }
 });
