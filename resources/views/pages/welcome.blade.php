@@ -174,3 +174,48 @@
     </div>
 
 @endsection
+
+@section('karacompete')
+    <div class="">
+        <h1 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl p-1 md:p-2 font-bold text-center mb-4">Top Competitions</h1>
+        <p class="text-lg sm:text-xl md:text-2xl lg:text-3xl p-1 md:p-2 text-center mb-12 max-w-4xl mx-auto">Meet the top karate athletes competing in this event.</p>
+        <div class="grid md:grid-cols-3 gap-3 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            {{-- Competition infos-details --}}
+            <div class="w-fit bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden p-3">
+                <div class="h-48 bg-gray-800">
+                  <img src="{{Vite :: asset('resources/datas/img/compete.jpeg')}}" alt="Competitor" class="w-full h-full object-cover">
+                </div>
+                <div class="p-4">
+                  <div class="text-md sm:text-sm md:text-sm lg:text-xl font-bold">Karate World Series Championship 2023</div>
+                  <h3 class="font-medium mb-1"> <span class="text-md sm:text-sm md:text-sm lg:text-xl font-bold">Country</span> : Senegal</h3>
+                  <h3 class="font-medium mb-1"> <span class="text-md sm:text-sm md:text-sm lg:text-xl font-bold">Style</span> : Shotokan</h3>
+                  <h3 class="font-medium mb-1"> <span class="text-md sm:text-sm md:text-sm lg:text-xl font-bold">Participant</span> : 32</h3>
+                </div>
+              </div>
+              {{-- Competition infos-details --}}
+              <div class="w-fit bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden p-3">
+                <div class="h-48 bg-gray-800">
+                  <img src="{{Vite :: asset('resources/datas/img/compete.jpeg')}}" alt="Competitor" class="w-full h-full object-cover">
+                </div>
+                <div class="p-4">
+                  <div class="text-md sm:text-sm md:text-sm lg:text-xl font-bold">Karate World Series Championship 2023</div>
+                  <h3 class="font-medium mb-1"> <span class="text-md sm:text-sm md:text-sm lg:text-xl font-bold">Country</span> : Senegal</h3>
+                  <h3 class="font-medium mb-1"> <span class="text-md sm:text-sm md:text-sm lg:text-xl font-bold">Style</span> : Shotokan</h3>
+                  <h3 class="font-medium mb-1"> <span class="text-md sm:text-sm md:text-sm lg:text-xl font-bold">Participant</span> : 32</h3>
+                </div>
+              </div>
+              {{-- Competition infos-details --}}
+              <div class="w-fit bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden p-3">
+                <div class="h-48 bg-gray-800">
+                  <img src="{{Vite :: asset('resources/datas/img/compete.jpeg')}}" alt="Competitor" class="w-full h-full object-cover">
+                </div>
+                <div class="p-4">
+                  <div class="text-md sm:text-sm md:text-sm lg:text-xl font-bold">Karate World Series Championship 2023</div>
+                  <h3 class="font-medium mb-1"> <span class="text-md sm:text-sm md:text-sm lg:text-xl font-bold">Country</span> : Senegal</h3>
+                  <h3 class="font-medium mb-1"> <span class="text-md sm:text-sm md:text-sm lg:text-xl font-bold">Style</span> : Shotokan</h3>
+                  <h3 class="font-medium mb-1"> <span class="text-md sm:text-sm md:text-sm lg:text-xl font-bold">Participant</span> : 32</h3>
+                </div>
+              </div>
+        </div>
+    </div>
+@endsection

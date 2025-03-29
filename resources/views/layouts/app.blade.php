@@ -14,6 +14,7 @@
         <main>
             @yield('content')
             @yield('details')
+            @yield('karacompete')
         </main>
         <footer class="bg-gray-800 text-white py-8">
             @include('components.footer')
