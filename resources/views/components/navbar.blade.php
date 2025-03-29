@@ -11,9 +11,11 @@
         </ul>
         
         <!-- Login button -->
-        <button class="hidden md:block text-primary font-bold rounded-sm border-2 border-button px-4 py-1 hover:bg-button hover:text-white transition-colors">
-            Login
-        </button>
+        <a href="login">
+            <button class="hidden md:block text-primary font-bold rounded-sm border-2 border-button px-4 py-1 hover:bg-button hover:text-white transition-colors">
+                Login
+            </button>
+        </a>
         
         <!-- Mobile Menu Button -->
         <button 
