@@ -176,7 +176,7 @@
 @endsection
 
 @section('karacompete')
-    <div class="">
+    <div class="bg-white py-12">
         <h1 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl p-1 md:p-2 font-bold text-center mb-4">Top Competitions</h1>
         <p class="text-lg sm:text-xl md:text-2xl lg:text-3xl p-1 md:p-2 text-center mb-12 max-w-4xl mx-auto">Meet the top karate athletes competing in this event.</p>
         <div class="grid md:grid-cols-3 gap-3 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -218,4 +218,40 @@
               </div>
         </div>
     </div>
+@endsection
+@section('Schedule')
+    <!-- Tournament Schedule -->
+  <div class="container mx-auto px-4 py-12 max-w-7xl  sm:px-6 lg:px-8 bg-[#F4F6F4] mb-10">
+    <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl p-1 md:p-2 font-bold text-center mb-4">Tournament Schedule</h2>
+    <p class="text-lg sm:text-xl md:text-2xl lg:text-3xl p-1 md:p-2 text-center mb-12 max-w-4xl mx-auto">Plan your visit with our detailed event schedule.</p>
+    
+    <div class="grid md:grid-cols-3 gap-4 mb-8">
+      <div class="bg-white p-3 rounded-lg shadow-sm border border-gray-100 text-center hover:shadow-lg transition-shadow duration-300">
+        <div class="text-sm font-medium">Day 1: June 15</div>
+      </div>
+      <div class="bg-white p-3 rounded-lg shadow-sm border border-gray-100 text-center hover:shadow-lg transition-shadow duration-300">
+        <div class="text-sm font-medium">Day 2: June 16</div>
+      </div>
+      <div class="bg-white p-3 rounded-lg shadow-sm border border-gray-100 text-center hover:shadow-lg transition-shadow duration-300">
+        <div class="text-sm font-medium">Day 3: June 17</div>
+      </div>
+    </div>
+    
+    <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+      <h3 class="text-md sm:text-sm md:text-sm lg:text-xl font-bold flex ">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5m-9-6h.008v.008H12v-.008ZM12 15h.008v.008H12V15Zm0 2.25h.008v.008H12v-.008ZM9.75 15h.008v.008H9.75V15Zm0 2.25h.008v.008H9.75v-.008ZM7.5 15h.008v.008H7.5V15Zm0 2.25h.008v.008H7.5v-.008Zm6.75-4.5h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008V15Zm0 2.25h.008v.008h-.008v-.008Zm2.25-4.5h.008v.008H16.5v-.008Zm0 2.25h.008v.008H16.5V15Z" />
+          </svg>          
+        Morning Session (9:00 AM - 12:00 PM)
+      </h3>
+      <ul class="space-y-3 pl-7">
+        <li class="">
+            <h3 class="font-medium mb-1"> <span class="text-md sm:text-sm md:text-sm lg:text-xl font-bold">9:00</span> - Opening Ceremony, First Preliminary Rounds (70kg, 75kg, +75kg)</h3>
+        </li>
+        <li class="">
+          <h3 class="font-medium mb-1"> <span class="text-md sm:text-sm md:text-sm lg:text-xl font-bold">11:30</span> - Afternoon's Kumite Preliminary Rounds (55kg, 60kg, 65kg)</h3>
+        </li>
+      </ul>
+    </div>
+</div>
 @endsection
