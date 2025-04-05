@@ -5,7 +5,7 @@
   <!-- Login Form -->
   <div class="container mx-auto px-4 py-12 flex justify-center">
     <div class="w-full max-w-xl">
-      <div class="bg-gray-50 rounded-lg p-8">
+      <div class="bg-[#F4F6F4] rounded-lg p-8">
         <h1 class="text-2xl font-semibold text-center mb-6">Login</h1>
         
         <form x-data="loginForm" @submit.prevent="submitForm">
@@ -14,7 +14,7 @@
               type="email" 
               x-model="email"
               placeholder="Email" 
-              class="w-full px-4 py-3 rounded-md border border-gray-200 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+              class="w-full px-4 py-3 rounded-md border border-gray-200 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent bg-white"
               required
             >
           </div>
@@ -24,7 +24,7 @@
               type="password" 
               x-model="password"
               placeholder="Password" 
-              class="w-full px-4 py-3 rounded-md border border-gray-200 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+              class="w-full px-4 py-3 rounded-md border border-gray-200 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent bg-white"
               required
             >
           </div>

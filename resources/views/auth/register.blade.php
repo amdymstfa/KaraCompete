@@ -13,7 +13,7 @@
               type="text" 
               x-model="fullName"
               placeholder="Full name" 
-              class="w-full px-4 py-3 rounded-md border border-gray-200 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+              class="bg-white w-full px-4 py-3 rounded-md border border-gray-200 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
               required
             >
           </div>
@@ -23,7 +23,7 @@
               type="email" 
               x-model="email"
               placeholder="Email" 
-              class="w-full px-4 py-3 rounded-md border border-gray-200 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+              class="bg-white w-full px-4 py-3 rounded-md border border-gray-200 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
               required
             >
           </div>
@@ -33,7 +33,7 @@
               type="password" 
               x-model="password"
               placeholder="Password" 
-              class="w-full px-4 py-3 rounded-md border border-gray-200 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+              class="bg-white w-full px-4 py-3 rounded-md border border-gray-200 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
               required
             >
           </div>
@@ -43,7 +43,7 @@
               type="password" 
               x-model="confirmPassword"
               placeholder="Confirm password" 
-              class="w-full px-4 py-3 rounded-md border border-gray-200 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+              class="bg-white w-full px-4 py-3 rounded-md border border-gray-200 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
               required
             >
           </div>
@@ -52,7 +52,7 @@
             <div class="relative">
               <select 
                 x-model="state"
-                class="w-full px-4 py-3 rounded-md border border-gray-200 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent appearance-none"
+                class="bg-white w-full px-4 py-3 rounded-md border border-gray-200 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent appearance-none"
                 required
               >
                 <option value="" disabled selected>State</option>
@@ -72,7 +72,7 @@
             <div class="relative">
               <select 
                 x-model="grade"
-                class="w-full px-4 py-3 rounded-md border border-gray-200 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent appearance-none"
+                class="bg-white w-full px-4 py-3 rounded-md border border-gray-200 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent appearance-none"
                 required
               >
                 <option value="" disabled selected>Grade</option>
@@ -92,7 +92,7 @@
             <div class="relative">
               <select 
                 x-model="age"
-                class="w-full px-4 py-3 rounded-md border border-gray-200 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent appearance-none"
+                class="bg-white w-full px-4 py-3 rounded-md border border-gray-200 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent appearance-none"
                 required
               >
                 <option value="" disabled selected>Age</option>
@@ -112,7 +112,7 @@
             <div class="relative">
               <select 
                 x-model="club"
-                class="w-full px-4 py-3 rounded-md border border-gray-200 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent appearance-none"
+                class="bg-white w-full px-4 py-3 rounded-md border border-gray-200 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent appearance-none"
                 required
               >
                 <option value="" disabled selected>Club</option>
@@ -120,7 +120,7 @@
                   <option :value="clubOption" x-text="clubOption"></option>
                 </template>
               </select>
-              <div class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
+              <div class="bg-white absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
                 <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                 </svg>
