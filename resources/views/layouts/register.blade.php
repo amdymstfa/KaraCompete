@@ -6,6 +6,7 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
         <title>@yield('title')</title>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+        
     </head>
     <body>
         <header>
