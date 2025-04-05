@@ -3,8 +3,8 @@
 @section('content')
      <!-- Register Form -->
   <div class="container mx-auto px-4 py-8 flex justify-center">
-    <div class="w-full max-w-md">
-      <div class="bg-gray-50 rounded-lg p-8">
+    <div class="w-full max-w-2xl">
+      <div class="bg-[#F4F6F4] rounded-lg p-10">
         <h1 class="text-2xl font-semibold text-center mb-6">Register</h1>
         
         <form x-data="registerForm" @submit.prevent="submitForm">
@@ -131,9 +131,10 @@
           
           <div x-show="error" class="mb-4 text-red-500 text-sm" x-text="error"></div>
           
-          <button 
+          <div class="flex justify-center">
+            <button 
             type="submit" 
-            class="w-full bg-green-500 text-white py-3 rounded-md font-medium flex items-center justify-center"
+            class=" bg-green-500 text-white py-3 px-3 rounded-md font-medium flex items-center justify-center"
             :class="{'opacity-75 cursor-not-allowed': loading}"
             :disabled="loading"
           >
@@ -145,6 +146,7 @@
             </span>
             <span>REGISTER</span>
           </button>
+          </div>
         </form>
       </div>
     </div>
