@@ -147,6 +147,15 @@
             <span>REGISTER</span>
           </button>
           </div>
+         <div class="flex justify-center mt-5">
+            <p class="text-sm text-gray-600">
+                Already registered?
+                <a href="/login" class="text-green-600 hover:underline">
+                  <span>Login</span>
+                </a>
+              </p>
+              
+         </div>
         </form>
       </div>
     </div>
