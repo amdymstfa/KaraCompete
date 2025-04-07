@@ -17,6 +17,10 @@ class RegisterService
             'email' => ['required', 'email', 'unique:users,email'],
             'password' => ['required', 'confirmed'],
             'role' => ['nullable', 'in:admin,referee,athlete'],
+            'state' => ['required', 'string'],
+            'grade' => ['required', 'string'],
+            'age' => ['required', 'integer'],
+            'club' => ['required', 'string'],
         ]);
 
         // Return errors if validation fails
@@ -40,7 +44,11 @@ class RegisterService
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            'role' => $role
+            'role' => $role,
+            'state' => $data['state'],
+            'grade' => $data['grade'],
+            'age' => $data['age'],
+            'club' => $data['club'],
         ]);
 
         // Return success response with user data
