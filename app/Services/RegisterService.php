@@ -13,13 +13,13 @@ class RegisterService
     {
         // Validate incoming data
         $validator = Validator::make($data, [
-            'name' => ['required'],
+            'fullname' => ['required'],
             'email' => ['required', 'email', 'unique:users,email'],
             'password' => ['required', 'confirmed'],
             'role' => ['nullable', 'in:admin,referee,athlete'],
             'state' => ['required', 'string'],
             'grade' => ['required', 'string'],
-            'age' => ['required', 'integer'],
+            'age' => 'required|in:Under 18,18-25,26-35,36-45,46+',
             'club' => ['required', 'string'],
         ]);
 
@@ -41,7 +41,7 @@ class RegisterService
 
         // Create the new user
         $user = User::create([
-            'name' => $data['name'],
+            'fullname' => $data['fullname'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'role' => $role,
