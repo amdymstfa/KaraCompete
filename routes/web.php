@@ -11,3 +11,4 @@ Route::get('/', function () {
 });
 Route::get('login', [LoginController::class, 'ShowLoginForm']);
 Route::get('register', [RegisterController::class, 'ShowRegisterForm']);
+

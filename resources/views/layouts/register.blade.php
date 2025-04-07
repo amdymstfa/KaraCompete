@@ -8,7 +8,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
          <script>
     document.addEventListener('alpine:init', () => {
-      Alpine.data('registerForm', () => ({
+      Alpine.data('registrationUser', () => ({
         fullName: '',
         email: '',
         password: '',
@@ -25,21 +25,56 @@
         error: '',
         
         submitForm() {
-          this.loading = true;
-          this.error = '';
-          
-          if (this.password !== this.confirmPassword) {
-            this.error = 'Passwords do not match';
-            this.loading = false;
-            return;
-          }
-          
-          // Simulate API call
-          setTimeout(() => {
-            this.loading = false;
-            window.location.href = 'tournament-bracket.html';
-          }, 1000);
-        }
+  this.loading = true;
+  this.error = '';
+
+  if (!this.email.includes('@')) {
+    this.error = 'Please enter a valid email';
+    this.loading = false;
+    return;
+  }
+
+  if (this.password.length < 8) {
+    this.error = 'Password must be at least 8 characters';
+    this.loading = false;
+    return;
+  }
+
+  fetch("{{ route('registrationUser') }}", {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+    'X-CSRF-TOKEN': '{{ csrf_token() }}'
+  },
+  body: JSON.stringify({
+    full_name: this.fullName,
+    email: this.email,
+    password: this.password,
+    password_confirmation: this.confirmPassword,
+    state: this.state,
+    grade: this.grade,
+    age: this.age,
+    club: this.club
+  })
+})
+.then(res => res.json())
+.then(data => {
+  this.loading = false;
+  console.log(data); // Affiche la réponse dans la console pour débogage
+  if (data.success) {
+    window.location.href = '/login';
+  } else {
+    this.error = data.message || 'Registration failed';
+  }
+})
+.catch(err => {
+  this.loading = false;
+  this.error = 'An error occurred';
+  console.error(err); // Affiche l'erreur complète dans la console
+});
+
+}
+
       }));
     });
   </script>

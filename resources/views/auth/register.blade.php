@@ -7,7 +7,7 @@
       <div class="bg-[#F4F6F4] rounded-lg p-10">
         <h1 class="text-2xl font-semibold text-center mb-6">Register</h1>
         
-        <form x-data="registerForm" @submit.prevent="submitForm">
+        <form x-data="registrationUser" @submit.prevent="submitForm">
           <div class="mb-4">
             <input 
               type="text" 
