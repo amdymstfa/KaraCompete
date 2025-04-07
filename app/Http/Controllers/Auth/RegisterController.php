@@ -1,34 +1,31 @@
 <?php
-
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Services\RegisterService;
-use Illuminate\Http\RedirectResponse;
-
 
 class RegisterController extends Controller
-{   
-    protected $RegisterService ;
+{
+    private $RegisterService;
 
-    public function __construct(RegisterService $RegisterService){
-        $this->RegisterService = $RegisterService;
+    public function __construct(RegisterService $registerService)
+    {
+        $this->RegisterService = $registerService;
     }
 
     public function ShowRegisterForm(){
         return view('auth.register');
     }
-     
-    public function registrationUser(Request $request) : RedirectResponse {
-        // call the service 
+
+    public function registrationUser(Request $request) 
+    {
         $result = $this->RegisterService->registerUser($request->all());
 
-        // handle sucess request
-        if ($result['success']){
-            return redirect()->route('login')->with('sucess', 'user created sucessfully');
+        if ($result['success']) {
+            return response()->json(['message' => 'User created successfully']);
         }
 
-        return redirect()->route('register')->withErrors($result['errors']);
+        return response()->json(['errors' => $result['errors']], 400); 
     }
 }
