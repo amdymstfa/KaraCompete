@@ -11,7 +11,7 @@ return new class extends Migration
         Schema::table('users', function (Blueprint $table) {
             $table->string('state')->nullable();
             $table->string('grade')->nullable();
-            $table->integer('age')->nullable();
+            $table->string('age')->nullable();
             $table->string('club')->nullable();
         });
     }
