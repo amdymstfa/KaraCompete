@@ -8,8 +8,8 @@
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
          <script>
     document.addEventListener('alpine:init', () => {
-      Alpine.data('registrationUser', () => ({
-        fullName: '',
+      Alpine.data('registerForm', () => ({
+        fullname: '',
         email: '',
         password: '',
         confirmPassword: '',
@@ -25,29 +25,30 @@
         error: '',
         
         submitForm() {
-  this.loading = true;
-  this.error = '';
+      this.loading = true;
+      this.error = '';
 
-  if (!this.email.includes('@')) {
-    this.error = 'Please enter a valid email';
-    this.loading = false;
-    return;
-  }
+      // Basic validation
+      if (!this.email.includes('@')) {
+        this.error = 'Please enter a valid email address.';
+        this.loading = false;
+        return;
+      }
 
-  if (this.password.length < 8) {
-    this.error = 'Password must be at least 8 characters';
-    this.loading = false;
-    return;
-  }
+      if (this.password.length < 8) {
+        this.error = 'Password must be at least 8 characters.';
+        this.loading = false;
+        return;
+      }
 
-  fetch("{{ route('registrationUser') }}", {
+      fetch('/api/registration', {
   method: 'POST',
   headers: {
     'Content-Type': 'application/json',
-    'X-CSRF-TOKEN': '{{ csrf_token() }}'
   },
+  credentials: 'include',
   body: JSON.stringify({
-    full_name: this.fullName,
+    fullname: this.fullname,
     email: this.email,
     password: this.password,
     password_confirmation: this.confirmPassword,
@@ -60,21 +61,21 @@
 .then(res => res.json())
 .then(data => {
   this.loading = false;
-  console.log(data); // Affiche la réponse dans la console pour débogage
-  if (data.success) {
+  console.log(data);
+  if (data.token) {
+    alert('Registration successful!');
     window.location.href = '/login';
   } else {
-    this.error = data.message || 'Registration failed';
+    this.error = data.message || 'Registration failed. Please try again.';
   }
 })
 .catch(err => {
   this.loading = false;
-  this.error = 'An error occurred';
-  console.error(err); // Affiche l'erreur complète dans la console
+  this.error = 'Something went wrong. Please try again.';
+  console.error(err);
 });
 
-}
-
+    }
       }));
     });
   </script>

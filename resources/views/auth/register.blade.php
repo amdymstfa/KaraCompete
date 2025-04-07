@@ -7,12 +7,12 @@
       <div class="bg-[#F4F6F4] rounded-lg p-10">
         <h1 class="text-2xl font-semibold text-center mb-6">Register</h1>
         
-        <form x-data="registrationUser" @submit.prevent="submitForm">
+        <form x-data="registerForm" @submit.prevent="submitForm">
           <div class="mb-4">
             <input 
               type="text" 
-              x-model="fullName"
-              placeholder="Full name" 
+              x-model="fullname"
+              placeholder="Fullname" 
               class="bg-white w-full px-4 py-3 rounded-md border border-gray-200 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
               required
             >
@@ -55,7 +55,7 @@
                 class="bg-white w-full px-4 py-3 rounded-md border border-gray-200 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent appearance-none"
                 required
               >
-                <option value="" disabled selected>State</option>
+                <option value="" disabled >State</option>
                 <template x-for="stateOption in states" :key="stateOption">
                   <option :value="stateOption" x-text="stateOption"></option>
                 </template>
@@ -75,7 +75,7 @@
                 class="bg-white w-full px-4 py-3 rounded-md border border-gray-200 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent appearance-none"
                 required
               >
-                <option value="" disabled selected>Grade</option>
+                <option value="" disabled >Grade</option>
                 <template x-for="gradeOption in grades" :key="gradeOption">
                   <option :value="gradeOption" x-text="gradeOption"></option>
                 </template>
@@ -95,7 +95,7 @@
                 class="bg-white w-full px-4 py-3 rounded-md border border-gray-200 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent appearance-none"
                 required
               >
-                <option value="" disabled selected>Age</option>
+                <option value="" disabled >Age</option>
                 <template x-for="ageOption in ages" :key="ageOption">
                   <option :value="ageOption" x-text="ageOption"></option>
                 </template>
@@ -115,7 +115,7 @@
                 class="bg-white w-full px-4 py-3 rounded-md border border-gray-200 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent appearance-none"
                 required
               >
-                <option value="" disabled selected>Club</option>
+                <option value="" disabled >Club</option>
                 <template x-for="clubOption in clubs" :key="clubOption">
                   <option :value="clubOption" x-text="clubOption"></option>
                 </template>
