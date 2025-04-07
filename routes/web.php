@@ -9,6 +9,7 @@ use App\Http\Controllers\Auth\RegisterController;
 Route::get('/', function () {
     return view('pages.welcome');
 });
-Route::get('login', [LoginController::class, 'ShowLoginForm']);
-Route::get('register', [RegisterController::class, 'ShowRegisterForm']);
+Route::get('login', [LoginController::class, 'ShowLoginForm'])->name('login');
+Route::get('register', [RegisterController::class, 'ShowRegisterForm'])->name('register');
+
 
