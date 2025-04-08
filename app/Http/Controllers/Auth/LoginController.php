@@ -48,7 +48,7 @@ class LoginController extends Controller
 
         if ($user->isAdmin()) {
             return response()->json([
-                'redirect' => route('admin.dashboard'),
+                'redirect' => route('pages.admin.dashboard'),
                 'access_token' => $token,
                 'token_type' => 'Bearer',
                 'user' => $user,
@@ -57,7 +57,7 @@ class LoginController extends Controller
 
         if ($user->isAgent()) {
             return response()->json([
-                'redirect' => route('referee.dashboard'),
+                'redirect' => route('pages.referee.dashboard'),
                 'access_token' => $token,
                 'token_type' => 'Bearer',
                 'user' => $user,
@@ -66,7 +66,7 @@ class LoginController extends Controller
 
         // Default redirect for client
         return response()->json([
-            'redirect' => route('athlete.dashboard'),
+            'redirect' => route('pages.athlete.dashboard'),
             'access_token' => $token,
             'token_type' => 'Bearer',
             'user' => $user,
