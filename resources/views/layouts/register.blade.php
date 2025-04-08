@@ -62,9 +62,14 @@
 .then(data => {
   this.loading = false;
   console.log(data);
-  if (data.token) {
-    alert('Registration successful!');
-    window.location.href = '/login';
+  if (data.message) {
+   
+    // alert(data.message);
+    this.showToast = true;
+    // window.location.href = '/login';
+    setTimeout(() => {
+          window.location.href = '/login';
+        }, 1000);
   } else {
     this.error = data.message || 'Registration failed. Please try again.';
   }
@@ -81,7 +86,7 @@
   </script>
     </head>
     <body>
-        <header>
+        <header class="">
             @include('components.navbar')
         </header>
         <main>

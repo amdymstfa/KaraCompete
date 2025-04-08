@@ -21,9 +21,12 @@ class RegisterController extends Controller
     public function registrationUser(Request $request) 
     {
         $result = $this->RegisterService->registerUser($request->all());
-
+        
         if ($result['success']) {
-            return response()->json(['message' => 'User created successfully']);
+            return response()->json([
+                'message' => 'User created successfully',
+                
+            ]);
         }
 
         return response()->json(['errors' => $result['errors']], 400); 

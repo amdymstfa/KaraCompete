@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 
+
 class RegisterService
 {
     public function registerUser(array $data)
@@ -51,10 +52,14 @@ class RegisterService
             'club' => $data['club'],
         ]);
 
+        // Create a new after registration
+        
+        // $token = $user->createToken('')->plainTextToken;
+        // dd($token); 
         // Return success response with user data
         return [
             'success' => true,
-            'user' => $user
+            'user' => $user,      
         ];
     }
 }
