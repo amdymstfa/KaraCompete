@@ -44,16 +44,32 @@ class LoginController extends Controller
 
         // Return a JSON response with the redirect URL based on the role
         $user = Auth::user();
-        
+        $token = $user->createToken('auth_token')->plainTextToken;
+
         if ($user->isAdmin()) {
-            return response()->json(['redirect' => route('admin.dashboard')]);
+            return response()->json([
+                'redirect' => route('admin.dashboard'),
+                'access_token' => $token,
+                'token_type' => 'Bearer',
+                'user' => $user,
+            ]);
         }
 
         if ($user->isAgent()) {
-            return response()->json(['redirect' => route('referee.dashboard')]);
+            return response()->json([
+                'redirect' => route('referee.dashboard'),
+                'access_token' => $token,
+                'token_type' => 'Bearer',
+                'user' => $user,
+            ]);
         }
 
         // Default redirect for client
-        return response()->json(['redirect' => route('athlete.dashboard')]);
+        return response()->json([
+            'redirect' => route('athlete.dashboard'),
+            'access_token' => $token,
+            'token_type' => 'Bearer',
+            'user' => $user,
+        ]);
     }
 }

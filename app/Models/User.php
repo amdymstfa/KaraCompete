@@ -28,6 +28,22 @@ class User extends Authenticatable
         'club',
         'role'
     ];
+
+    public function isAdmin()
+    {
+        return $this->role === 'admin';
+    }
+
+    public function isAgent()
+    {
+        return $this->role === 'agent';
+    }
+
+    public function isAthlete()
+    {
+        return $this->role === 'athlete';
+    }
+
     
 
     /**
