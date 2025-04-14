@@ -42,3 +42,4 @@
             <p>&copy; 2025 KaraCompete. All rights reserved.</p>
         </div>
     </div>
+</footer>
