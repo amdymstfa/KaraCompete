@@ -7,8 +7,10 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Services\LoginService;
 
+
 class LoginController extends Controller
 {
+    
     protected $loginService;
 
     public function __construct(LoginService $loginService)
@@ -25,6 +27,7 @@ class LoginController extends Controller
     // Handle login attempt
     public function authenticate(Request $request)
     {
+        
         // Validate login data
         $result = $this->loginService->validateLoginData($request->all());
 
@@ -48,16 +51,16 @@ class LoginController extends Controller
 
         if ($user->isAdmin()) {
             return response()->json([
-                'redirect' => route('pages.admin.dashboard'),
+                'redirect' => route('admin'),
                 'access_token' => $token,
                 'token_type' => 'Bearer',
                 'user' => $user,
             ]);
         }
 
-        if ($user->isAgent()) {
+        if ($user->isReferee()) {
             return response()->json([
-                'redirect' => route('pages.referee.dashboard'),
+                'redirect' => route('referee'),
                 'access_token' => $token,
                 'token_type' => 'Bearer',
                 'user' => $user,
@@ -66,7 +69,7 @@ class LoginController extends Controller
 
         // Default redirect for client
         return response()->json([
-            'redirect' => route('pages.athlete.dashboard'),
+            'redirect' => route('athlete'),
             'access_token' => $token,
             'token_type' => 'Bearer',
             'user' => $user,
