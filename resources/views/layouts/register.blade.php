@@ -61,7 +61,6 @@
 .then(res => res.json())
 .then(data => {
   this.loading = false;
-  console.log(data);
   if (data.message) {
    
     // alert(data.message);
