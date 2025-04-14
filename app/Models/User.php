@@ -34,7 +34,7 @@ class User extends Authenticatable
         return $this->role === 'admin';
     }
 
-    public function isAgent()
+    public function isReferee()
     {
         return $this->role === 'agent';
     }
