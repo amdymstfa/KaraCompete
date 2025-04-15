@@ -29,6 +29,7 @@
           @include('admin._arbitors-table')
           @include('admin._jurys-table')
           @include('admin._competitions-table')
+          @include('admin._tournament-table')
         </main>
       </div>
     </div>
