@@ -12,24 +12,24 @@
       ></div>
 
       <!-- Sidebar -->
-      @include('admin._sidebar')
+      @include('admin.sidebar')
       
       <!-- Main Content -->
       <div class="flex-1 flex flex-col overflow-hidden">
         <!-- Content Header -->
-        @include('admin._header')
+        @include('admin.header')
         
         <!-- Content Body -->
         <main class="flex-1 overflow-y-auto p-4 bg-gray-50">
           <!-- Stats Cards -->
-          @include('admin._stats')
+          @include('admin.stats')
           
           <!-- Tables pour chaque onglet -->
-          @include('admin._users-table')
-          @include('admin._arbitors-table')
-          @include('admin._jurys-table')
-          @include('admin._competitions-table')
-          @include('admin._tournament-table')
+          @include('admin.users-table')
+          @include('admin.arbitors-table')
+          @include('admin.jurys-table')
+          @include('admin.competitions-table')
+          @include('admin.tournament-table')
         </main>
       </div>
     </div>
