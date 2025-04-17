@@ -57,6 +57,15 @@
                     Tournament Brackets
                 </button>
             </li>
+            <li>
+                <button
+                    @click="setActiveTab('GlobalsStats')"
+                    class="w-full text-left px-4 py-2 rounded-md transition-colors"
+                    :class="activeTab === 'brackets' ? 'bg-green-100 text-green-800' : 'hover:bg-gray-100'"
+                >
+                    Globals stats
+                </button>
+            </li>
         </ul>
     </nav>
 </div>
