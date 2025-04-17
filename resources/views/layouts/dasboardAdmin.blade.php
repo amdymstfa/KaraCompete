@@ -6,8 +6,8 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
         <title>@yield('title')</title>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
         <script>
-            // Script pour Alpine.js - ajouter sous @section('scripts') si ce n'est pas déjà fait
             function adminPanel() {
               return {
                 activeTab: 'users',
@@ -38,10 +38,8 @@
                   { id: 3, name: 'National Finals', date: '2025-08-10', status: 'Planning', participants: '0' }
                 ],
                 
-                // Méthode pour changer d'onglet
                 setActiveTab(tab) {
                   this.activeTab = tab;
-                  // Fermer le menu mobile quand on change d'onglet
                   this.mobileMenuOpen = false;
                 }
               }
