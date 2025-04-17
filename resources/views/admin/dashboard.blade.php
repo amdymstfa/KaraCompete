@@ -30,6 +30,8 @@
           @include('admin.jurys-table')
           @include('admin.competitions-table')
           @include('admin.tournament-table')
+          @include('admin.globals-stats')
+
         </main>
       </div>
     </div>
