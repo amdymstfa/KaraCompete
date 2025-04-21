@@ -31,7 +31,7 @@
           @include('admin.competitions-table')
           @include('admin.tournament-table')
           @include('admin.globals-stats')
-
+          @include('admin.schedule')
         </main>
       </div>
     </div>

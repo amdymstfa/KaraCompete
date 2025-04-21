@@ -59,13 +59,23 @@
             </li>
             <li>
                 <button
+                    @click="setActiveTab('schedule')"
+                    class="w-full text-left px-4 py-2 rounded-md transition-colors"
+                    :class="activeTab === 'schedule' ? 'bg-green-100 text-green-800' : 'hover:bg-gray-100'"
+                >
+                schedule
+                </button>
+            </li>
+            <li>
+                <button
                     @click="setActiveTab('GlobalsStats')"
                     class="w-full text-left px-4 py-2 rounded-md transition-colors"
-                    :class="activeTab === 'brackets' ? 'bg-green-100 text-green-800' : 'hover:bg-gray-100'"
+                    :class="activeTab === 'GlobalsStats' ? 'bg-green-100 text-green-800' : 'hover:bg-gray-100'"
                 >
                     Globals stats
                 </button>
             </li>
+           
         </ul>
     </nav>
 </div>
