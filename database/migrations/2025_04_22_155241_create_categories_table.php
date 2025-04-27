@@ -14,20 +14,31 @@ return new class extends Migration
         Schema::create('categories', function (Blueprint $table) {
             $table->id();
 
-            // Foreign key linking to the competitions table
-            $table->foreignId('competition_id')
-                  ->constrained('competitions') // References 'id' on 'competitions' table
-                  ->onDelete('cascade'); // If competition is deleted, delete its categories
+            // Descriptive and unique name
+            $table->string('name')->unique();
 
-            $table->string('name')->comment('Descriptive name, e.g., Cadet Male Kumite -60kg');
-            $table->integer('min_age')->unsigned()->nullable();
-            $table->integer('max_age')->unsigned()->nullable();
-            $table->string('sex')->nullable()->index()->comment('e.g., male, female, mixed');
-            $table->decimal('min_weight', 5, 2)->nullable();
-            $table->decimal('max_weight', 5, 2)->nullable();
-            $table->string('min_grade')->nullable();
-            $table->string('max_grade')->nullable();
-            $table->string('type')->index()->comment('e.g., kumite, kata'); // Indexed for filtering
+            // Type: Kata or Kumite
+            $table->enum('type', ['Kata', 'Kumite'])->index();
+
+            // Gender: Male, Female, or Mixed
+            $table->enum('gender', ['Male', 'Female', 'Mixed'])->index();
+
+            // Age Range (String for flexibility like "18-25", "Senior", "U14")
+            $table->string('age_range')->nullable()->index();
+
+            // Weight Range (for Kumite, nullable for Kata/Open)
+            $table->unsignedSmallInteger('min_weight')->nullable()->comment('Min weight in kg (inclusive)');
+            $table->unsignedSmallInteger('max_weight')->nullable()->comment('Max weight in kg (inclusive)');
+
+            // Grade/Belt Range (Optional)
+            $table->string('min_grade')->nullable()->comment('E.g., Blue Belt');
+            $table->string('max_grade')->nullable()->comment('E.g., Black Belt');
+
+            // Optional description
+            $table->text('description')->nullable();
+
+            // Status for hiding old categories
+            $table->boolean('is_active')->default(true);
 
             $table->timestamps();
         });

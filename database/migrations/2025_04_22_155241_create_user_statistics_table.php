@@ -15,9 +15,10 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
 
-            // Optional: Link if stats are per-competition per user
-            // $table->foreignId('competition_id')->nullable()->constrained('competitions')->onDelete('cascade');
-
+            $table->foreignId('competition_id')
+              ->nullable()
+              ->constrained('competitions')
+              ->cascadeOnDelete(); 
             // Statistic fields
             $table->integer('matches_played')->default(0);
             $table->integer('matches_won')->default(0);
