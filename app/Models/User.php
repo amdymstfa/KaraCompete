@@ -24,8 +24,9 @@ class User extends Authenticatable
         'state',
         'grade',
         'age',
-        'club',
-        'role'
+        'club_id',
+        'role',
+        'status'
     ];
 
     public function isAdmin()
@@ -43,8 +44,12 @@ class User extends Authenticatable
         return $this->role === 'athlete';
     }
 
-    
-
+    public function isActive() { return $this->status === 'active'; }
+    public function isPending() { return $this->status === 'pending'; }
+    public function isSuspended() { return $this->status === 'suspended'; }
+    public function club() {
+        return $this->belongsTo(Club::class);
+    }
     /**
      * The attributes that should be hidden for serialization.
      *
