@@ -14,11 +14,28 @@ return new class extends Migration
         Schema::create('competitions', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->date('date');
+            $table->date('start_date');
+            $table->date('end_date')->nullable();
             $table->string('location')->nullable();
             $table->text('description')->nullable();
-            $table->string('status')->default('scheduled')->index()->comment('e.g., scheduled, ongoing, completed, cancelled');
-            $table->timestamps();
+
+            //restricts admin deletion if linked
+            $table->foreignId('organizer_id')
+                  ->constrained('users')
+                  ->onDelete('restrict');
+
+            // Target bracket size for categories within this competition
+            $table->unsignedSmallInteger('bracket_size')
+                  ->default(16)
+                  ->comment('Target/Max bracket size (e.g., 16, 32, 64)');
+
+            // Competition status
+            $table->string('status')
+                  ->default('scheduled')
+                  ->index()
+                  ->comment('e.g., scheduled, ongoing, completed, cancelled');
+
+            $table->timestamps(); 
         });
     }
 
