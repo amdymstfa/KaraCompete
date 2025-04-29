@@ -116,16 +116,16 @@ class UserController extends Controller
       */
     public function update(Request $request, int $id)
     {
-         // Validation logic remains the same
-         $validatedData = $request->validate([
+        $validatedData = $request->validate([
             'fullname' => 'sometimes|required|string|max:255',
             'email' => ['sometimes', 'required', 'string', 'email', 'max:255', Rule::unique('users', 'email')->ignore($id)],
-            'password' => 'sometimes|nullable|string|min:8|confirmed', // Can update password
+            'password' => 'sometimes|nullable|string|min:8|confirmed',
             'state' => 'sometimes|nullable|string|max:100',
             'grade' => 'sometimes|nullable|string|max:50',
             'age' => 'sometimes|nullable|integer|min:0',
-            'club' => 'sometimes|nullable|string|max:100',
+            'club' => 'sometimes|nullable|string|max:100', 
             'role' => ['sometimes', 'required', Rule::in(['admin', 'referee', 'athlete'])],
+            'status' => ['sometimes', 'required', 'string', Rule::in(['active', 'pending', 'suspended'])], 
         ]);
 
         try {
