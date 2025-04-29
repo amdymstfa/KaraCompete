@@ -33,12 +33,10 @@
           @include('admin.globals-stats')
           @include('admin.schedule')
         </main>
+        @include('admin.modals.user-edit')
+        @include('admin.modals.user-progress')
       </div>
     </div>
 </div>
 
-@endsection
-
-@section('scripts')
-<script src="{{ asset('js/admin-panel.js') }}"></script>
 @endsection
