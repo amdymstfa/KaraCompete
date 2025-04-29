@@ -47,9 +47,14 @@ class User extends Authenticatable
     public function isActive() { return $this->status === 'active'; }
     public function isPending() { return $this->status === 'pending'; }
     public function isSuspended() { return $this->status === 'suspended'; }
-    public function club() {
-        return $this->belongsTo(Club::class);
+    // public function club() {
+    //     return $this->belongsTo(Club::class);
+    // }
+    public function club(): BelongsTo
+    {
+        return $this->belongsTo(Club::class, 'club_id');
     }
+
     /**
      * The attributes that should be hidden for serialization.
      *
